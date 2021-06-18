@@ -1,0 +1,26 @@
+{
+    "name": "Novac Djokovic",
+    "short_name":"TennisPlayer",
+    "start_url": "/MySite.html",
+    "display": "standalone" ,
+    "background_color" : "#ddd",
+    "theme_color" : "#317EFB",
+    "orientation" : "portrait-primary",
+    "icons" :[
+        {
+             "src": "/images/maskable_icon_512.png",
+             "type": "image/png",
+             "size" :"512x512"
+
+        },
+        {
+            "src": "/images/tennis-png-1795",
+            "type": "image/png",
+            "size" :"256x256",
+            "purpose": "any maskable"
+
+       }
+    ] 
+
+
+}

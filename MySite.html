@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="theme-color" content="#317EFB"/>
+        <title>Novac Djokovic</title>
+        <link rel="stylesheet" href="/css/mysite.css">
+      
+        <script src="/js/app.js" defer></script> 
+        <script src="/js/ShowHideTableColumns.js" defer></script>
+        <script src="/js/SortTableByColumn.js" defer></script>   
+        <script src="/js/Export_Fetch_TableData.js" defer></script>
+        <script src="/js/Caculates.js" defer></script>
+        <script src="/js/AddRemoveRow.js" defer></script>
+        <script src="/js/SearchTable.js" defer></script>        
+        <link rel="manifest" href="manifest.json">
+                 
+    </head>
+    <body>
+         <!-- Header -->
+         <div class="header" lative; width: 100%;">
+            <h1 id="hName"></h1>
+        </div>
+        <!--navigation-->
+        <ul class="menu">            
+           <li><a href="#">Home</a></li>
+           <li><a href="#">Information</a></li>
+           <li><a href="#">Statistics</a></li>
+           <li><a href="#">Social</a></li>
+     
+        </ul>
+        <!--Main Body Site it's flexbox -->
+        <!------------------------------->
+        <div class="mbody">                 
+           <!------------>
+           <!--sidebar -->
+           <!------------>
+           <div class="bsite">
+               <!--Foto -->
+               <div class="player-foto">
+                   <!-- Image -->
+                   <img src="/images/220px-Novak_Djokovic_(16650975118).jpg" alt="Novak Djokovic">
+                </div>
+                <!--info-->
+                <div class="player-info">
+                    <div class="ptitle">Height:</div>      <div class="pvalue" id="height"></div>
+                    <div class="ptitle">Age:</div>        <div class="pvalue" id="age">33</div>
+                    <div class="ptitle">Born    :</div>   <div class="pvalue" id="daybirth"></div>
+                    <div class="ptitle">Birthplace:</div> <div class="pvalue" id="bplace"></div>
+                    <div class="ptitle">Plays:</div>      <div class="pvalue" id="plays"></div>
+                    <div class="ptitle">Ranking:</div>    <div class="pvalue" id="rank"></div>                  
+                    <div class="ptitle">Wins:</div>       <div class="pvalue" id="wins"></div>                  
+                    <div class="ptitle">Losts:</div>      <div class="pvalue" id="losts"></div>                  
+                </div> 
+            </div>
+           
+
+            <!--------------->
+            <!--center body-->
+            <!--------------->
+            <div class="bcenter">
+                <!--statistics-->                
+                <div class="player-stats">     
+                <!--world order-->
+                <div>                    
+                    <div class="stat-table-info">
+                        
+                        <div><h2>TITLES & FINALS</h2></div>
+                        <!-- Menu of hide/show table columns -->
+                        <ul class="colmenu" >
+                            
+                            <li><a href="#" id="addpb1">Add Row</a></li>
+                            <li>
+                                <ul id="mTabrow" class='tmenu mabsolute mhidden'>
+                                    <div>
+                                        <form>
+                                            <div>
+                                              <label for="fyear">Year</label>
+                                              <input type="text" id="fyear" name="fyear">
+                                            </div>
+                                            <div>
+                                              <label for="ltitles">Titles </label>
+                                              <input type="text" id="ltitles" name="ltitles">
+                                             </div>
+                                            <div>
+                                              <label for="ltours">Tournaments</label>
+                                              <input type="text" id="ltours" name="ltours">
+                                             </div>
+                                            <input type="button" id="addRowpb" value="Save">
+                                          </form>
+                                    </div>
+                                </ul>
+
+
+                            </li>  
+                            <!-- <li><a href="#" id="delpb1">Del Row</a></li> -->
+                        </ul>  
+                    </div>
+                    <!-- <input type="text" class="titles-search" id = "titles-search" onkeyup='searchTable("titlesbody","titles-search")' placeholder="Search..." /> -->
+                    <input type="text" class="titles-search" id = "titles-search" placeholder="Search..." />
+                    <table class="titles_finals" id="titles" >
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Titles</th>
+                                <th>Tournaments</th>
+                            </tr>
+                        </thead>
+                        <tbody id="titlesbody">
+
+                        </tbody>
+                    </table>
+                    
+
+                </div>  
+                  <div id ='statistics_con' class="mrelative">
+                    <div class="stat-table-info">
+                        <div><h2>ACTIVITY</h2></div>
+                        <!-- Menu of hide/show table columns -->
+                        <ul class="colmenu" >
+                            <li><a href="#" id="toArrayData2">Copy Table Data</a></li>  
+                            <li><a href="#" id="fromArrayData2">Insert Table Data</a></li>  
+                            <li><a href="#" id="colmenuoption">Show/Hide Columns</a></li>  
+                            <li><ul id="tmenu" class='tmenu mabsolute mhidden'></li>  
+                        </ul>  
+                    </div>
+                    <!-- <input type="text" class="titles-search" id ="titles-search2" onkeyup='searchTable("statsbody","titles-search2")' placeholder="Search..." /> -->
+                     <input type="text" class="titles-search" id ="titles-search2" placeholder="Search..." />
+                    <table class="titles_finals" id="stats">
+                        <thead >
+                            <th>Year</th>
+                            <th>Tournament</th>
+                            <th>Round</th>
+                            <th>Rank</th>
+                            <th>Opponent</th>
+                            <th>W-L</th>
+                            <th>Score</th>
+                        </thead>
+                        <tbody id="statsbody">
+                        <tr>
+                            <td>2021</td>
+                            <td>Australian Open</td>
+                            <td>Finals</td>
+                            <td>4</td>
+                            <td>Daniil Medvedev</td>
+                            <td>W</td>
+                            <td>75 62 62</td>
+                        </tr>
+                           <tr>
+                            <td>2020</td>
+                            <td>Australian Open</td>    
+                            <td>Semi-Finals</td>
+                            <td>5</td>
+                            <td>Dominic Thiem</td>
+                            <td>W</td>
+                            <td>64 46 26 63 64</td>
+                        </tr>
+
+                        <tr>
+                            <td>2020</td>
+                            <td>Roland Garros</td>    
+                            <td>Finals</td>
+                            <td>2</td>
+                            <td>Rafael Nadal</td>
+                            <td>L</td>
+                            <td>06 26 57</td>
+                        </tr>
+                        <tr>
+                            <td>2020</td>
+                            <td>ATP Masters 1000 Rome</td>    
+                            <td>Finals</td>
+                            <td>15</td>
+                            <td>Diego Schwartzman</td>
+                            <td>W</td>
+                            <td>75 63</td>
+                        </tr>
+                        <tr>
+                            <td>2020</td>
+                            <td>ATP Masters 1000 Cincinnati</td>    
+                            <td>Finals</td>
+                            <td>30</td>
+                            <td>Milos Raonic</td>
+                            <td>W</td>
+                            <td>16 63 64</td>
+                        </tr>
+                        <tr>
+                            <td>2020</td>
+                            <td>Dubai</td>    
+                            <td>Finals</td>
+                            <td>6</td>
+                            <td>Stefanos Tsitsipas</td>
+                            <td>W</td>
+                            <td>63 64</td>
+                        </tr>
+                        <tr>
+                            <td>2020</td>
+                            <td>Australian Open</td>    
+                            <td>Finals</td>
+                            <td>5</td>
+                            <td>Dominic Thlem</td>
+                            <td>W</td>
+                            <td>64 46 26 63 64</td>
+                        </tr>
+                        <tr>
+                            <td>2019</td>
+                            <td>ATP Masters 1000 Paris</td>    
+                            <td>Finals</td>
+                            <td>28</td>
+                            <td>Denis Shapovalov</td>
+                            <td>W</td>
+                            <td>63 64</td>
+                        </tr>
+                        <tr>
+                            <td>2019</td>
+                            <td>Tokyo</td>    
+                            <td>Finals</td>
+                            <td>80</td>
+                            <td>John Millman</td>
+                            <td>W</td>
+                            <td>63 62</td>
+                        </tr>
+                        <tr>
+                            <td>2019</td>
+                            <td>Wimbledon</td>    
+                            <td>Finals</td>
+                            <td>3</td>
+                            <td>Roger Federer</td>
+                            <td>W</td>
+                            <td>76<sup>5</sup> 16 76<sup>4</sup> 46 13-12</td>
+                        </tr>
+                        <tr>
+                            <td>2019</td>
+                            <td>ATP Masters 1000 Madrid</td>    
+                            <td>Finals</td>
+                            <td>9</td>
+                            <td>Stefanos Tsitsipas</td>
+                            <td>W</td>
+                            <td>63 64</td>
+                        </tr>
+                        <tr>
+                            <td>2019</td>
+                            <td>ATP Masters 1000 Rome</td>    
+                            <td>Finals</td>
+                            <td>2</td>
+                            <td>Rafael Nadal</td>
+                            <td>L</td>
+                            <td>06 64 16</td>
+                        </tr>
+                        <tr>
+                            <td>2019</td>
+                            <td>Australian Open</td>    
+                            <td>Finals</td>
+                            <td>2</td>
+                            <td>Rafael Nadal</td>
+                            <td>W</td>
+                            <td>63 62 63</td>
+                        </tr>
+                        <tr>
+                            <td>2018</td>
+                            <td>Wimbledon</td>    
+                            <td>Finals</td>
+                            <td>8</td>
+                            <td>Kevin Anderson</td>
+                            <td>W</td>
+                            <td>62 62 76<sup>3</sup></td>
+                        </tr>
+                        <tr>
+                            <td>2018</td>
+                            <td>ATP Masters 1000 Paris</td>    
+                            <td>Finals</td>
+                            <td>18</td>
+                            <td>Karen Khachanov</td>
+                            <td>L</td>
+                            <td>57 46</td>
+                        </tr>
+                        <tr>
+                            <td>2018</td>
+                            <td>ATP Masters 1000 Shanghai</td>    
+                            <td>Finals</td>
+                            <td>19</td>
+                            <td>Borna Coric</td>
+                            <td>W</td>
+                            <td>63 64</td>
+                        </tr>
+                        <tr>
+                            <td>2018</td>
+                            <td>ATP 500 London / Queen's Club</td>    
+                            <td>Finals</td>
+                            <td>6</td>
+                            <td>Borna Coric</td>
+                            <td>L</td>
+                            <td>75 67<sup>4</sup> 36</td>
+                        </tr>
+                        <tr>
+                            <td>2017</td>
+                            <td>ATP 250 Eastbourne</td>    
+                            <td>Finals</td>
+                            <td>16</td>
+                            <td>Gael Monfils</td>
+                            <td>W</td>
+                            <td>63 64</td>
+                        </tr>
+                        <tr>
+                            <td>2017</td>
+                            <td>ATP Masters 1000 Rome</td>    
+                            <td>Finals</td>
+                            <td>17</td>
+                            <td>Alexander Zverev </td>
+                            <td>L</td>
+                            <td>46 36</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                   
+                    </ul>                    
+                </div>
+            </div>          
+            </div>    
+            <!--footer-->
+            <!---------->
+            <div class="footer">        
+                <!--social media-->                
+                <ul id="social">
+                    <li><a href="https://twitter.com/#!/DjokerNole" id="tw" rel="me" target="_blank">Twitter</a></li>
+                 
+                     <li><a href="http://www.facebook.com/djokovic.official" id="fb" rel="me" target="_blank">Facebook</a></li>
+                                 
+                    <li><a href="http://feeds.feedburner.com/Crunchify" id="rss" rel="me" target="_blank">RSS</a></li>
+                </ul>
+             </div>      
+
+            
+        </div>
+        
+    </body>
+</html>
