@@ -1,7 +1,7 @@
 {
     "name": "Novac Djokovic",
     "short_name":"TennisPlayer",
-    "start_url": "/MySite.html",
+    "start_url": "/index.html",
     "display": "standalone" ,
     "background_color" : "#ddd",
     "theme_color" : "#317EFB",
